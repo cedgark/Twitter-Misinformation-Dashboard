@@ -1,0 +1,34 @@
+{% extends "top_layout.html" %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='table.css') }}"/>
+<h1>Last Fortnights Top Trends</h1>
+<title> Last Fortnights Top Trends </title>
+
+<table class="main_table">
+  <thead>
+    <tr>
+      <th>RANK</th>
+      <th>TOPIC</th>
+      <th>TWEET COUNT</th>
+      <th>DATE</th>
+      <th>VIEW</th>
+    </tr>
+  </thead>
+  {% if trending|length %}
+  <tbody>
+  {% for trend in trending %}
+    <tr class="clickable-row">
+      <td>{{ loop.index }}</td>
+      <td>{{trend.keyword}}</td> <!-- Currently showing hashtag result -->
+      <td>{{trend.occurrences}}</td>
+      <td>{{trend.date}}</td>
+      <td><a href="{{ url_for('topic', id=trend.entryindx) }}"><button class="view-hashtag-button">View</button></a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+  {% endif %}
+</table>
+{% if not trending|length %}
+<div class="no-keyword">Keyword does not exist.</div>
+{% endif %}
+{% endblock content %}

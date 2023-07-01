@@ -1,0 +1,244 @@
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 280px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #323232;
+  color: #F5F5F5;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding: 20px;
+}
+
+/* Deceit Decetive logo*/
+.sidenav img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #F5F5F5;
+  display: block;
+}
+
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #A8BEFF; /* Baby Blue Eyes */
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.fa-sm {
+  width: 10px;
+  padding-bottom: 15px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+*{
+ font-family: 'Oswald', 'sans-serif';
+ margin: 0px;
+ padding: 0px;
+ box-sizing: border-box;
+ list-style: none;
+}
+
+body {
+  background-color: #F5F5F5;
+  color: #323232;
+}
+
+h1, h2
+{
+    margin-top: 40px;
+    margin-bottom: 70px;
+    text-align:center;
+}
+
+
+
+/* <!-- to format and design the table layout on homepage ---> */
+.body-container
+{
+  margin-left: 280px; /* push away from sidebar */
+}
+
+.body-container table
+{
+  border-collapse: collapse;
+  width: 85%;
+
+}
+
+.main_table {
+  border: 1px solid #B9B9B9;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.main_table td, .main_table th {
+  border: 1px solid #B9B9B9;
+  border-left: none;
+  border-right: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  color: #595959;
+}
+
+.main_table td:first-child {
+  margin-left: auto;
+  margin-right: auto;
+  color: #B9B9B9;
+}
+
+.main_table th:last-child, td:last-child {
+  text-align: center;
+}
+
+.main_table th {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  background-color: #EFEFEF;
+  font-size: 1.05em;
+  font-weight: normal;
+}
+
+.view-tweet-button, .view-hashtag-button
+{
+  border: 1px solid #A8BEFF;
+  color: #7180AC;
+  background-color: transparent;
+  padding: 8px 20px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+
+.view-tweet-button:hover, .view-hashtag-button:hover
+{
+  background-color: #A8BEFF;
+  color: white;
+}
+
+.no-keyword
+{
+    padding-top: 50px;
+    font-size: 22px;
+    text-align: center;
+    color: #B9B9B9
+}
+
+.switch-view-button
+{
+    padding: 5px;
+    border: 1px solid #B9B9B9;
+    color: #323232;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.switch-view-button:hover
+{
+    background-color: #B9B9B9;
+}
+
+
+input[type=text]{
+  padding-top: 20%;
+  width:100%;
+  padding:12px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  /* background: linear-gradient(#7180AC, #F5F5F5); */
+  /* important */
+  display: flex;
+  /* important */
+  align-items: stretch;
+  justify-content: space-around;
+}
+
+.child {
+  width: 100%;
+  margin: 10px;
+
+  /* important */
+  min-height: 100%;
+}
+
+.word-map .emotion-chart .country-graph .mention-chart .state-graph
+{
+  margin: 10px;
+}
+
+.twitter-tweet
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.diagrams
+{
+  height: 100%;
+  border-color: #F5F5F5;
+}
+
+.small-note
+{
+    text-align: center;
+    font-size: 15px;
+    color: #B9B9B9;
+}
+
+
+
+.twt_wrap {
+  width: 100%;
+  height: auto;
+}
+
+.percentage:after {
+  content: "";
+  display: block;
+  background-color: #3d9970;
+}
+.percentage-20:after {
+  width: 20%;
+}
+.percentage-30:after {
+  width: 30%;
+}

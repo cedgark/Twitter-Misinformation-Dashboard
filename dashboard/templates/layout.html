@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}"/>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+    <title>Misinformation Dashboard - {{ title }}</title>
+
+</head>
+
+<body>
+
+  <div class="sidenav">
+
+      <p><a href= "{{url_for('home')}}"><img src="{{ url_for ('static', filename= 'images/Logo_Group.png') }}" width="187.5" height="212" alt="Deceit Detective Logo" class="center-image"/></a></p>
+      <br></br>
+
+      <a class="link" href="{{url_for('top_topics') }}" ><i class="fa fa-fire fa-sm"></i>&nbsp;&nbsp;&nbsp; Top Topics </a> <!-- nbsp is used to keep the spacing (DO NOT REMOVE) -->
+      <a class="link" href="{{url_for('top_hashtags') }}"><i class="fa fa-hashtag fa-sm"></i>&nbsp;&nbsp;&nbsp; Top Hashtags</a>
+      <a class="link" href="{{url_for('top_mentions') }}"><i class="fa fa-at fa-sm"></i>&nbsp;&nbsp;&nbsp; Top Mentions</a>
+
+  </div>
+
+  <div class="body-container">
+  {% block content %}{% endblock %}
+  </div>
+
+</body>
+
+</html>

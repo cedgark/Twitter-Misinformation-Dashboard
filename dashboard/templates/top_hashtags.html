@@ -1,0 +1,71 @@
+{% extends "top_layout.html" %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='table.css') }}"/>
+<h1>Top Hashtags</h1>
+<title> Top Hashtags </title>
+<div class="filter-dropdown">
+  <button class="filterbtn">Sort &nbsp&nbsp;<i class="fa fa-bars fa-lg"></i></button>
+  <div class="filter-dropdown-content">
+        <form>
+          <div class="small-spacer-top"> </div>
+          <input type="radio" name="sort_by" value="high-to-low" />
+          <label for="high-to-low"> Count (High To Low) </label><br>
+          <input type="radio" name="sort_by" value="low-to-high" />
+          <label for="low-to-high"> Count (Low To High) </label><br>
+          <input type="radio" name="sort_by" value="date-listed" />
+          <label for="date-listed"> Newest </label><br>
+          <input type="hidden" name="sort_by" value="empty" />
+          <div class="small-spacer-bottom"> </div>
+        <button class="apply" type="submit"> APPLY </button>
+    </div>
+</div>
+
+<div class = filter-options>
+    <table>
+        <tr>
+
+            <td> <label for="startdate">START:</label> </td>
+            <td> <input type ="date" id="startdate" name="startdate" value= {{ startdate }} min="2020-03-01" max="2020-03-15"> </td>
+            <td> <input type="submit" value="SUBMIT"> </td>
+        </tr>
+        <tr>
+            <td> <label for="enddate">END:</label> </td>
+            <td> <input type ="date" id="enddate" name="enddate"value= {{ enddate }} min="2020-03-01" max="2020-03-15"> </td>
+            <td> <input type="submit" value="SUBMIT"> </td>
+        </tr>
+          <div class="input-group">
+            <td colspan="2" style="width:100%"> <input type="search" class="form-control-rounded" placeholder="#example" aria-label="Search" aria-describedby="search-addon" id="hashtag_Search" name="hashtag_search" size="30"/> </td>
+            <td> <button type="submit"> SEARCH </button> </td>
+          </div>
+        </form>
+    </table>
+</div>
+
+<table class="main_table">
+  <thead>
+    <tr>
+      <th>RANK</th>
+      <th>HASHTAG</th>
+      <th>TWEET COUNT</th>
+      <th>DATE</th>
+      <th>VIEW</th>
+    </tr>
+  </thead>
+  {% if trending|length %}
+  <tbody>
+  {% for trend in trending %}
+    <tr class="clickable-row">
+      <td>{{ loop.index }}</td>
+      <td>#{{trend.keyword}}</td>
+      <td>{{trend.occurrences}}</td>
+      <td>{{trend.date}}</td>
+      <td><a href="{{ url_for('topic', id=trend.entryindx) }}"><button class="view-hashtag-button">View</button></a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+  {% endif %}
+</table>
+{% if not trending|length %}
+<div class="no-keyword">Keyword does not exist.</div>
+{% endif %}
+{% endblock content %}

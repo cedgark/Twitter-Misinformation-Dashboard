@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='table.css') }}"/>
+<div class="main">
+  <div class="topic">
+    <h1> Searched Result: {{topic.keyword}} </h1> <!--change this to be clicked topic (can use same method as title) -->
+    <div class="container">
+      <div class="child">
+        <div class="twt_wrap">
+        <div class="small-note">(If on Firefox please disable Enhanced Tracking Protection to view embedded tweets)</div>
+        {% for i in range(0,12) %}
+            {% set id = idstoshow[i] %}
+            <blockquote class="twitter-tweet" lang="en" ><a href="https://twitter.com/i/status/{{id}}?ref_src=twsrc%5Etfw"></a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        {% endfor %}
+      </div>
+    </div>
+      <table class="diagrams">
+          <tr> <td>
+              <div class="word-map">
+                  <img src="{{ url_for ('static', filename= 'images/cloud.png') }}" width="400" height="200"/>
+              </div>
+          </td> </tr>
+          <tr> <td>
+              <div class="emotion-chart">
+                  <img src="{{ url_for ('static', filename= 'images/emotion.png') }}" width="400" height="317"/>
+              </div>
+          </td> </tr>
+          <tr> <td>
+              <div class="country-graph">
+                  <img id="country" style="display:inline;" src="{{ url_for ('static', filename= 'images/locBar.png') }}" width="400" height="367"/>
+              </div>
+          </td> </tr>
+          <tr> <td>
+              <div class="state-graph">
+                  <!--  put route to state bar graph here!! -->
+                  <img id="state" style="display:none;" src="{{ url_for ('static', filename= 'images/stateBar.png') }}" width="400" height="367"/>
+              </div>
+          </td> </tr>
+          <tr> <td>
+              <button class="switch-view-button" type="button" onclick="switchViewState()">SWITCH VIEW</button>
+          </td> </tr>
+          <tr> <td>
+              <div class="map-photo">
+                  <!-- word map 1 route here!!-->
+                  <img id="map-1" style="display:inline;" src="{{ url_for ('static', filename= 'images/worldMap.png') }}" width="400" height="250"/>
+              </div>
+          </td> </tr>
+          <tr> <td>
+              <div class="map-photo-2">
+                  <!-- put world map 2 route here!! -->
+                  <img id="map-2" style="display:none;" src="{{ url_for ('static', filename= 'images/USMap.png') }}" width="400" height="250"/>
+              </div>
+          </td> </tr>
+          <tr> <td>
+              <button class="switch-view-button" type="button" onclick="switchViewMap()">SWITCH VIEW</button>
+          </td> </tr>
+          <tr> <td>
+              <div class="mention-chart">
+                  <img src="{{ url_for ('static', filename= 'images/menBar.png') }}" width="400" height="367"/>
+              </div>
+          </td> </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+function switchViewState()
+{
+    if (document.getElementById('state').style.display == 'none')
+    {
+        document.getElementById('state').style.display='inline';
+        document.getElementById('country').style.display='none';
+    }
+    else
+    {
+        document.getElementById('state').style.display='none';
+        document.getElementById('country').style.display='inline';
+    }
+}
+
+function switchViewMap()
+{
+    if (document.getElementById('map-1').style.display == 'none')
+    {
+        document.getElementById('map-1').style.display='inline';
+        document.getElementById('map-2').style.display='none';
+    }
+    else
+    {
+        document.getElementById('map-1').style.display='none';
+        document.getElementById('map-2').style.display='inline';
+    }
+}
+
+
+</script>
+{% endblock content %}

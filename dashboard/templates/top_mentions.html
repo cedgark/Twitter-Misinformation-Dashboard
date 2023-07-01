@@ -1,0 +1,42 @@
+{% extends "top_layout.html" %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='table.css') }}"/>
+<h1>Top Mentions</h1>
+<title> Top Mentions </title>
+<div class = filter-options>
+    <form>
+      <div class="input-group">
+        <input type="search" class="form-control-rounded" placeholder="@example" aria-label="Search" aria-describedby="search-addon" />
+        <button type="button"> SEARCH </button>
+      </div>
+    </form>
+</div>
+
+<table class="main_table">
+  <thead>
+    <tr>
+      <th>RANK</th>
+      <th>MENTION</th>
+      <th>TWEET COUNT</th>
+      <th>DATE</th>
+      <th>VIEW</th>
+    </tr>
+  </thead>
+  {% if trending|length %}
+  <tbody>
+  {% for trend in trending %}
+    <tr class="clickable-row">
+      <td>{{ loop.index }}</td>
+      <td>{{trend.keyword}}</td> <!-- Currently showing hashtag result -->
+      <td>{{trend.occurrences}}</td>
+      <td>{{trend.date}}</td>
+      <td><a href="{{ url_for('topic', id=trend.entryindx) }}"><button class="view-hashtag-button">View</button></a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+  {% endif %}
+</table>
+{% if not trending|length %}
+<div class="no-keyword">Keyword does not exist.</div>
+{% endif %}
+{% endblock content %}

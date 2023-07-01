@@ -1,0 +1,210 @@
+/*Table */
+table.top_table {
+  background-color: #F5F5F5;
+  text-align: left;
+  width: 80%;
+
+  overflow-y: scroll;
+  height: 600px;
+  display: block;
+}
+
+table.top_table td, table.top_table th {
+  border: 1px solid #323232;
+  padding: 4px 2px;
+}
+table.top_table tbody td {
+  font-size: 13px;
+  color: #333333;
+}
+table.top_table thead {
+  background: #B9B9B9;
+  background: -moz-linear-gradient(top, #cacaca 0%, #c0c0c0 66%, #B9B9B9 100%);
+  background: -webkit-linear-gradient(top, #cacaca 0%, #c0c0c0 66%, #B9B9B9 100%);
+  background: linear-gradient(to bottom, #cacaca 0%, #c0c0c0 66%, #B9B9B9 100%);
+  border-bottom: 2px solid #444444;
+}
+table.top_table thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000000;
+  text-align: left;
+  border-left: 2px solid #323232;
+}
+table.top_table thead th:first-child {
+  border-left: none;
+}
+
+table.top_table tfoot td {
+  font-size: 14px;
+}
+table.top_table tfoot .links {
+  text-align: right;
+}
+table.top_table tfoot .links a{
+  display: inline-block;
+  background: #84A433;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 25px 17px;
+  background-color: transparent;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  border-bottom: 4px solid grey;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 25px 17px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+    border-bottom: 4px solid grey;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.apply {
+  border: none;
+  border-top: 1px solid #B9B9B9;
+  font-size: 16px;
+  background-color: transparent;
+  font-family: inherit;
+  min-width: 180px;
+  padding-top:10px;
+  padding-bottom:10px;
+  cursor: pointer;
+}
+
+.apply:hover
+{
+    background-color: #B9B9B9;
+}
+
+.filter-options
+{
+    margin-left: 7.5%; /* table contents takes 85%, so 7.5% on both sides */
+}
+
+
+
+.filter-options table, table td
+{
+    width: 220px;
+    border: 0px;
+    padding-bottom: 10px;
+    padding: 5px;
+}
+
+.filter-options button, input
+{
+    padding: 5px;
+    border: 1px solid #B9B9B9;
+    color: #323232;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.form-control-rounded:hover
+{
+    background-color: white;
+}
+
+.filter-options button:hover, input:hover
+{
+    background-color: #B9B9B9;
+}
+
+
+
+/* Filter By Dropdown */
+.filter-dropdown {
+  margin-right: 7.5%;
+  float: right;
+  overflow: hidden;
+}
+
+.filter-dropdown .filterbtn{
+  font-size: 15px;
+  border: 1px solid #B9B9B9;
+  outline: none;
+  color: #323232;
+  padding: 10px 30px;
+  background-color: transparent;
+  font-family: inherit;
+  margin: 0;
+}
+
+.filterbtn:hover
+{
+    background-color: #B9B9B9;
+}
+
+.filter-dropdown-content {
+  border: 1px solid #B9B9B9;
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 180px;
+  z-index: 1;
+}
+
+.filter-dropdown-content input{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+
+.small-spacer-top
+{
+    margin-bottom: 8px;
+}
+
+.small-spacer-bottom
+{
+    margin-bottom: 8px;
+}
+
+.filter-dropdown-content a {
+  float: none;
+  color: black;
+  padding: 15px 10px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.filter-dropdown:hover .filter-dropdown-content {
+  display: block;
+}
